@@ -1,6 +1,9 @@
 import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+injectTapEventPlugin();
 
 const styles = {
     Header: {
@@ -8,6 +11,9 @@ const styles = {
     },
     Title: {
         float: "left"
+    },
+    Company: {
+        fontWeight: "bold"
     }
 };
 
@@ -27,7 +33,14 @@ class Header extends React.Component {
         return (
             <AppBar
                 style={styles.Header}
-                title={<span style={styles.Title}> iTexico | Travel Expenses</span>} >
+                title={
+                  <span style={styles.Title}>
+                    <span style={styles.Company}>
+                      iTx |
+                    </span>
+                     &nbsp;Travel Expenses
+                  </span>
+                }>
             </AppBar>
         );
     }
